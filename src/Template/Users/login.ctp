@@ -1,21 +1,34 @@
 <!-- File: src/Template/Users/login.ctp -->
-
-<div class="users form">
+<center><body class="container">
+<div class="ow justify-content-center">
 <?= $this->Flash->render() ?>
 <?= $this->Form->create() ?>
+
     <fieldset>
-        <legend><?= __('Please enter your username and password') ?></legend>
-        <?= $this->Form->input('username') ?>
-        <?= $this->Form->input('password') ?>
+        <legend align="center" ><?= __('Inserisci le tue credenziali') ?></legend>
+        <div class="form-group col-md-4 col-md-offset-5 align-center "> 
+        
+         <br>   <?= $this->Form->input('username', array('label' => false, 'placeholder' => 'Username')) ?> 
+        </div>
+        <div class="form-group col-md-4 col-md-offset-5 align-center ">
+        <?= $this->Form->input('password', (array('label' => false, 'placeholder' => 'Password'))) ?>
+        </div>
     </fieldset>
-<?= $this->Form->button(__('Login')); ?>
+    
+<?= $this->Form->button(__('Entra'), ['class'=> 'btn btn-success']); ?>
 <?= $this->Form->end() ?>
 </div>
-<div class="register user">
+
+
+
+
+<div>
+
 <?=
 $this->Html->link(
     'Registrati se non hai un account',
     ['controller' => 'Users', 'action' => 'add',]
-);
+)
 ?>
 </div>
+
