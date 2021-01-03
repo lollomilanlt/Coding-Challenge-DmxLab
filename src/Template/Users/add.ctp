@@ -1,5 +1,11 @@
 <!-- src/Template/Users/add.ctp -->
 
+<!--
+
+    View register User
+
+-->
+
 <center><div class="users form">
 <?= $this->Form->create($user) ?>
     <fieldset>

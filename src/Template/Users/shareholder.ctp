@@ -1,3 +1,10 @@
+<!--
+
+    View dashboard ShareHolder
+
+-->
+
+
 <h1> Ciao Socio! </h1>
 <p><?= $this->Html->link('Log Out', ['controller' => 'Users','action' => 'logout']) ?></p>
 <?=

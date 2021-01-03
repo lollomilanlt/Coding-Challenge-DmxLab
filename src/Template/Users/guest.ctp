@@ -1,3 +1,10 @@
+<!--
+
+    View dashboard Guest
+
+-->
+
+
 <h1> Ciao Utente! </h1>
 
 <p><?= $this->Html->link('Log Out', ['controller' => 'Users','action' => 'logout']) ?></p>

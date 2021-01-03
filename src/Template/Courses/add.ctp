@@ -1,5 +1,12 @@
 <!-- File: src/Template/Articles/add.ctp -->
 
+<!--
+
+    View per l'aggiunta di un corso
+
+-->
+
+
 <h3>Aggiungi un corso</h3>
 <?php
     echo $this->Form->create($course);

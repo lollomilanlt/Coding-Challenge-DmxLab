@@ -1,6 +1,12 @@
 <?php
 // src/Controller/CoursesController.php
 
+/*
+        Controller dedito alle funzionalità degli dei corsi/admin
+
+*/
+
+
 
 namespace App\Controller;
 

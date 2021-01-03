@@ -30,12 +30,38 @@ Ora puoi sia usare il web server integrato della tua macchina per vedere la home
 bin/cake server -p 8765
 ```
 
-Quindi visita `http://localhost:8765` per vedere la pagina di benvenuto!
+Quindi visita `http://localhost:8765` per vedere la pagina di benvenuto, visita poi `http://localhost:8765/users/login` per iniziare a sfogliare il progetto!
 
+3. Setup Database
+
+Tra i file del progetto troverai "consegnaf.sql", file atto a ripristinare il database dove si appoggia l'applicazione.
+
+Credenziali admin:
+
+USR:   admin
+
+PASSW: lorenzo1997
+
+Ho aggiunto la feature che l'admin rifiutando le richieste di adesione possa anche "bannare" l'account di un socio retrocedendolo a Guest...esso non potrà più visualizzare i corsi disponibili.
 
 Progetto a cura di Lorenzo Ceglia, queste sono le mie prime orme con questi strumenti.
 
 ## Premessa
 
 
+
 ## Considerazioni progettazione DB
+
+
+
+## Aspetti positivi
+
+
+
+## Difficoltà
+
+
+
+## Aspetti da migliorare
+
+

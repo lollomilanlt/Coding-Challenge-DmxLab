@@ -1,11 +1,15 @@
+<!--
 
+    View dashboard Admin
+
+-->
 <h1>Courses</h1>
 <div class="courses"><table>
 
     <tr>
         <th>Title</th>
         <th>Description</th>
-        <th><p><?= $this->Html->link('Add New Course', ['action' => 'add']) ?></p></th>
+        <th><p><?= $this->Html->link('Aggiungi Corso', ['action' => 'add']) ?></p></th>
         <th><p><?= $this->Html->link('Log Out', ['controller' => 'Users','action' => 'logout']) ?></p></th>
         
     </tr>
@@ -25,7 +29,7 @@
 
         <td>
         <?= $this->Form->postLink(
-                'Delete',
+                'Cancella',
                 ['action' => 'delete', $course->name],
                 ['confirm' => 'Are you sure?'])
             ?>
@@ -70,18 +74,18 @@
 
     <td>
         <?= $this->Form->postLink(
-                'Accept',
+                'Accetta',
                 ['action' => 'accept', $request->id, $request->users_id],
-                ['confirm' => 'Are you sure?']
+                ['confirm' => 'Sei sicuro?']
                 )
 
                 
             ?>
 
         <?= $this->Form->postLink(
-                'Refuse',
+                'Rifiuta',
                 ['action' => 'refuse', $request->id, $request->users_id],
-                ['confirm' => 'Are you sure?']
+                ['confirm' => 'Sei sicuro??']
                 )
 
                 

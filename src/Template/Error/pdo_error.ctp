@@ -2,6 +2,12 @@
 <h2>Hai inserito un dato già presente nel db!</h2>
 <p>Nel caso ti stavi registrando hai inserito una mail duplicata, in caso stavi inviando la richiesta di adesione l'hai già inviata! Torna indietro!</p>
 
+<!--
+
+    View errore duplicati DB
+
+-->
+
 
 
 <!-- 

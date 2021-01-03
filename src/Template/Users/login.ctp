@@ -1,4 +1,12 @@
 <!-- File: src/Template/Users/login.ctp -->
+
+<!--
+
+    View login User
+
+-->
+
+
 <center><body class="container">
 <div class="ow justify-content-center">
 <?= $this->Flash->render() ?>

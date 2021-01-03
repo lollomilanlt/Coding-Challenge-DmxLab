@@ -1,6 +1,12 @@
 <?php
 // src/Controller/UsersController.php
 
+/*
+        Controller dedito alle funzionalità degli utenti
+
+*/
+
+
 namespace App\Controller;
 
 use App\Controller\AppController;
