@@ -49,10 +49,10 @@ Progetto a cura di Lorenzo Ceglia.
 
 ## Premessa
 
-Questi sono i miei primi passi con questi strumenti, non avevo mai "smanettato" praticamente con un framework, avevo studiato Java Spring ma non ho mai avuto la possibilità
+Questi sono i miei primi passi gli strumenti che ho elencato, non avevo mai "smanettato" praticamente con un framework, avevo studiato Java Spring ma non ho mai avuto la possibilità
 di sfruttarlo sul campo pratico.
-Detto questo sono veramente contento del risultato nonostante la consegna non fosse particolarmente ardua, è stato stimolante sviluppare le basi del progetto con metodologie nuove, sono consapevole che una piccola sfida del genere mi abbia permesso di affacciarmi su strumenti che sicuramente sfrutterò nel mio futuro prossimo.
-Detto questo, procede un mio piccolo riassunto esperienziale.
+Detto questo sono veramente contento del risultato nonostante la consegna non fosse particolarmente ardua, è stato stimolante sviluppare le basi del progetto con metodologie nuove, adesso sono consapevole che una piccola sfida simile mi abbia permesso di affacciarmi a strumenti che sicuramente sfrutterò nel mio futuro prossimo.
+Procede un mio piccolo riassunto esperienziale.
 
 Enjoy :)
 
@@ -63,21 +63,21 @@ Come ho detto qualche riga più su, la consegna non era particolarmente impegnat
 Tra Users e Requests ho immaginato un'associazione 1a1 inserendo la chiave secondaria di Users nella tabella Requests, questo mi sarebbe stato utile più avanti per modificare lo stato dell'utente una volta che la richiesta viene accettata.
 Ho gestito lo stato dell'account utente con due flag: shareholder (Socio) e admin di tipo boolean (tinyint).
 Sono consapevole poi che il framework mi avrebbe aiutato a gestire meglio questa situazione con il campo role ma ho scoperto questa cosa troppo tardi.
-Per quanto riguarda la tabella dei corsi non ho sviluppato associazioni verso le altre due perchè l'uniche relazioni che vengono effettuate sono quelle dedite alla visualizzazione e alla cancellazione, l'ho quindi considerata come un semplice archivio.
+Per quanto riguarda la tabella dei corsi non ho sviluppato associazioni verso le altre due perchè le uniche relazioni che vengono effettuate sono quelle dedite alla visualizzazione e alla cancellazione, l'ho quindi considerata come un semplice archivio.
 
 
 ## Aspetti positivi
 
 Provo molta soddisfazione quando scrivo righe di codice e subisco un feedback immediato dall'applicazione che sto sviluppando, quindi in breve mi sono divertito!
-Devo assolutamente ringraziare la documentazione di CakePhp che ho trovato molto fornita e ben strutturata.
+Devo assolutamente ringraziare la documentazione di CakePhp che ho trovato ben fornita e ben strutturata.
 
 
 ## Difficoltà
 
-Le difficoltà che ho riscontrato sono state l'approccio a un framework a me inizialmente sconosciuto e alle sue funzioni che dovrebbero semplificare la vita a noi sviluppatori se queste prima vengono capite!
-In ogni modo ho approcciato il tutto sperimentando le operazioni CRUD più semplici, questo ha portato poi in un mio errore di progettazione che riporterò nella prossima sezione.
+Le difficoltà che ho riscontrato sono state l'approccio ad un framework a me inizialmente sconosciuto e alle sue funzioni che dovrebbero semplificare la vita a noi sviluppatori se queste prima vengono capite!
+Ad ogni modo ho approcciato il tutto sperimentando le operazioni CRUD più semplici, questo ha portato poi ad un mio errore di progettazione che riporterò nella prossima sezione.
 Resto soddifatto del prodotto finale anche se mi vergogno un pò della sua situazione grafica :(
-Lascio il repo aperto con la speranza che possa essere utile tutto questo a un novizio che come me, sta iniziando adesso ad usare questi metodi/strumenti.
+Lascio il repo aperto con la speranza che possa essere utile tutto questo ad un novizio che come me, sta iniziando adesso ad usare questi metodi/strumenti.
 
 
 
