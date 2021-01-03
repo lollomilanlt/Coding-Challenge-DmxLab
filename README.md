@@ -4,6 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
 
 [CakePHP](https://cakephp.org) 3.x.
+[PHP] Version 7.3.25
 
 Il codice sorgente del framework può essere trovato qui: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
