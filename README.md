@@ -88,7 +88,7 @@ Lascio il repo aperto con la speranza che possa essere utile tutto questo a un n
    Questo purtroppo non è successo ma è stata proprio la parte riservata ai corsi a diventare la dashboard dell'admin. In poche parole l'admin doveva essere gestito insieme agli altri utenti e invece si è ritrovato insieme ai corsi.
 3. Per i redirect verso le pagine utenti ho un pò improvvisato quando invece il framework poteva darmi una mano con le routes
 4. Ho gestito parzialmente gli errori di duplicati sul db, pensavo sarebbe bastato creare una view per quello specifico errore causato per esempio da un'email duplicata  e  invece se un utente prova a inviare due volte la richiesta di adesione viene renderizzata la medesima view... (gestione di quell'errore non modulare quindi) 
-
+5. Non e' possibile accedere alle pagine se non si e' loggati ma le pagine dell'admin modificando l'url purtroppo sono accessibili
 
 
 ## Questioni da porre a Dario (scritte così come le ho scritte sulle note del telefono)
