@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
 [![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
 
-Uno scheletro per creare applicazioni con [CakePHP](https://cakephp.org) 3.x.
+[CakePHP](https://cakephp.org) 3.x.
 
 Il codice sorgente del framework può essere trovato qui: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
