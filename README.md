@@ -77,7 +77,7 @@ Devo assolutamente ringraziare la documentazione di CakePhp che ho trovato ben f
 Le difficoltà che ho riscontrato sono state l'approccio ad un framework a me inizialmente sconosciuto e alle sue funzioni che dovrebbero semplificare la vita a noi sviluppatori se queste prima vengono capite!
 Ad ogni modo ho approcciato il tutto sperimentando le operazioni CRUD più semplici, questo ha portato poi ad un mio errore di progettazione che riporterò nella prossima sezione.
 Resto soddifatto del prodotto finale anche se mi vergogno un pò della sua situazione grafica :(
-Lascio il repo aperto con la speranza che possa essere utile tutto questo ad un novizio che come me, sta iniziando adesso ad usare questi metodi/strumenti.
+Lascio il repo aperto con la speranza che tutto questo possa essere utile ad un novizio che come me, sta iniziando adesso ad usare questi metodi/strumenti.
 
 
 
