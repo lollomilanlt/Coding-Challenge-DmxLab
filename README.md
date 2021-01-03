@@ -58,7 +58,7 @@ Enjoy :)
 
 ## Considerazioni progettazione DB
 
-Come ho detto qualche righe più su, la consegna non era particolarmente impegnativa, mi sono limitato a progettare 3 tabelle: Users, Requests e Courses,
+Come ho detto qualche riga più su, la consegna non era particolarmente impegnativa, mi sono limitato a progettare 3 tabelle: Users, Requests e Courses,
 Tra Users e Requests ho immaginato un'associazione 1a1 inserendo la chiave secondaria di Users nella tabella Requests, questo mi sarebbe stato utile più avanti per modificare lo stato dell'utente una volta che la richiesta viene accettata.
 Ho gestito lo stato dell'account utente con due flag: shareholder (Socio) e admin di tipo boolean (tinyint).
 Sono consapevole poi che il framework mi avrebbe aiutato a gestire meglio questa situazione con il campo role ma ho scoperto questa cosa troppo tardi.
