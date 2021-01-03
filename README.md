@@ -85,17 +85,16 @@ Lascio il repo aperto con la speranza che possa essere utile tutto questo a un n
 
 1. Sicuramente l'aspetto grafico, nemmeno con una base di bootstrap il tutto riesce a essere decente, sicuramente un aspetto che dovrò migliorare in futuro.
 2. Iniziando dalle operazioni CRUD ho iniziato a lavorare con la tabella dei Corsi con l'intento poi di trasferire le funzioni che stavo sviluppando nell'area dell'admin.
-   Questo purtroppo non è successo ma è stata proprio la parte riservata ai corsi a diventare la dashboard dell'admin. In poche parole l'admin doveva essere gestito insieme agli altri utenti e invece si è ritrovato insieme ai corsi.
+   Questo purtroppo non è successo ma è stata proprio la parte riservata ai corsi a diventare la dashboard dell'admin. In poche parole l'admin doveva essere gestito insieme agli    altri utenti e invece si è ritrovato insieme ai corsi.
 3. Per i redirect verso le pagine utenti ho un pò improvvisato quando invece il framework poteva darmi una mano con le routes
-4. Ho gestito parzialmente gli errori di duplicati sul db, pensavo sarebbe bastato creare una view per quello specifico errore causato per esempio da un'email duplicata  e  invece se un utente prova a inviare due volte la richiesta di adesione viene renderizzata la medesima view... (gestione di quell'errore non modulare quindi) 
+4. Ho gestito parzialmente gli errori di duplicati sul db, pensavo sarebbe bastato creare una view per quello specifico errore causato per esempio da un'email duplicata  e          invece se un utente prova a inviare due volte la richiesta di adesione viene renderizzata la medesima view... (gestione di quell'errore non modulare quindi) 
 5. Non e' possibile accedere alle pagine se non si e' loggati ma le pagine dell'admin modificando l'url purtroppo sono accessibili
 
 
 ## Questioni da porre a Dario (riportate così come le ho scritte sulle note del telefono)
 
 1. Chiedere bene il model del mvc (table e articles) per fare definitivamente chiarezza
-2. Problema form spazio vuoto da mandare al controller
-3. Se è possibile utilizzare il pattern dao
-4. Non mi è sembrato di lavorare con oggetti
-5. Definizione insert di massa
-6. Spiegazione AppController
+2. Se è possibile utilizzare il pattern dao
+3. Non mi è sembrato di lavorare con oggetti
+4. Definizione insert di massa
+5. Spiegazione AppController
