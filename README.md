@@ -48,7 +48,7 @@ Progetto a cura di Lorenzo Ceglia.
 
 ## Premessa
 
-Questi sono i miei primi passi con questi strumenti, non avevo mai "smanettato" praticamente con un framework, avevo studiato Java Bean ma non ho mai avuto la possibilità
+Questi sono i miei primi passi con questi strumenti, non avevo mai "smanettato" praticamente con un framework, avevo studiato Java Spring ma non ho mai avuto la possibilità
 di sfruttarlo sul campo pratico.
 Detto questo sono veramente contento del risultato nonostante la consegna non fosse particolarmente ardua, è stato stimolante sviluppare le basi del progetto con metodologie nuove, sono consapevole che una piccola sfida del genere mi abbia permesso di affacciarmi su strumenti che sicuramente sfrutterò nel mio futuro prossimo.
 Detto questo, procede un mio piccolo riassunto esperienziale.
