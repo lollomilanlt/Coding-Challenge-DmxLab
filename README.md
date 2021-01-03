@@ -91,7 +91,7 @@ Lascio il repo aperto con la speranza che possa essere utile tutto questo a un n
 5. Non e' possibile accedere alle pagine se non si e' loggati ma le pagine dell'admin modificando l'url purtroppo sono accessibili
 
 
-## Questioni da porre a Dario (scritte così come le ho scritte sulle note del telefono)
+## Questioni da porre a Dario (riportate così come le ho scritte sulle note del telefono)
 
 1. Chiedere bene il model del mvc (table e articles) per fare definitivamente chiarezza
 2. Problema form spazio vuoto da mandare al controller
