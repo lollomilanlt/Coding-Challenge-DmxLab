@@ -31,7 +31,7 @@ Ora puoi sia usare il web server integrato della tua macchina per vedere la home
 bin/cake server -p 8765
 ```
 
-Quindi visita `http://localhost:8765` per vedere la pagina di benvenuto, visita poi `http://localhost:8765/users/login` per iniziare a sfogliare il progetto!
+Quindi visita `http://localhost:8765` per a sfogliare il progetto!
 
 3. Setup Database
 
