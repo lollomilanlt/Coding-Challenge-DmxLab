@@ -96,6 +96,5 @@ Lascio il repo aperto con la speranza che tutto questo possa essere utile ad un 
 
 1. Chiedere bene il model del mvc (table e articles) per fare definitivamente chiarezza
 2. Se è possibile utilizzare il pattern dao
-3. Non mi è sembrato di lavorare con oggetti
-4. Definizione insert di massa
-5. Spiegazione AppController
+3. Definizione insert di massa
+4. Spiegazione AppController
