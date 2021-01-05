@@ -28,6 +28,9 @@ class UsersController extends AppController
     {
     parent::initialize();
     $this->Auth->allow(['logout']);
+
+
+    
     }
 
 
@@ -172,5 +175,32 @@ public function logout()
         }
 }
 
+/*public $components = array('Acl');
 
+public function azione() {
+    $aro = $this->Acl->Aro;
+
+    // Here's all of our group info in an array we can iterate through
+    $groups = array(
+        0 => array(
+            'alias' => 'admins'
+        ),
+        1 => array(
+            'alias' => 'guests'
+        ),
+        2 => array(
+            'alias' => 'shareholders'
+        ),
+    );
+
+    // Iterate and create ARO groups
+    foreach ($groups as $data) {
+        // Remember to call create() when saving in loops...
+        $aro->create();
+
+        // Save data
+        $aro->save($data);
+    }
+
+}*/
 }
