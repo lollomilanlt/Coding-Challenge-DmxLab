@@ -31,6 +31,8 @@ echo "Cognome = ".$surname."<br>";
 echo "Email = ".$email."<br>";
 echo "Data di nascita = ".$birth."<br>";
 
+//ciao
+
 
 
 ?>
