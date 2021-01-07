@@ -31,6 +31,9 @@ class UsersController extends AppController
         $this->paginate = [
             'contain' => ['Roles'],
         ];
+
+        $this->loadModel('Users');
+
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
@@ -60,11 +63,65 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             
             if ($user) {
-                $this->Auth->setUser($user);
-                return $this->redirect([
+                
+                $username = $this->request->data['email'];
+
+                /*return $this->redirect([
                     'controller' => 'Users',
                     'action' => 'index'
-                ]);
+                ]);*/
+
+
+                $query = $this->Users->find();
+                $query->where(['email' => $username]);
+
+                foreach ($query as $row) {
+                    
+                    $role=$row->role_id;
+                   
+                    //1:admin,2:shareholder.3=guest
+                }
+
+
+                if($role==1)
+                {
+                    $this->Auth->setUser($user);
+
+                    $this->Flash->success(__('Accesso come admin riuscito!'));
+
+                    return $this->redirect([
+                        'controller' => 'Admin',
+                        'action' => 'index'
+                    ]);
+                }
+
+                else if ($role==2)
+                {
+                    $this->Auth->setUser($user);
+
+                    $this->Flash->success(__('Accesso come shareholder riuscito!'));
+
+                    return $this->redirect([
+                        'controller' => 'Share',
+                        'action' => 'index'
+                    ]);
+                }
+
+                else if ($role==3)
+                {
+                    $this->Auth->setUser($user);
+
+                    $this->Flash->success(__('Accesso come guest riuscito!'));
+
+                    return $this->redirect([
+                        'controller' => 'Guest',
+                        'action' => 'index'
+                    ]);
+
+                }
+                
+                else $this->Flash->error(__('Utente non trovato'));
+
             }
             
             print_r($user);
@@ -193,12 +250,13 @@ class UsersController extends AppController
         $role->id = 2; // Socio 
         $this->Acl->deny($role->id,'controllers');
         $this->Acl->deny($role->id,'controllers/Users');
-        $this->Acl->allow($role->id,'controllers/Users/index');
+        $this->Acl->allow($role->id,'controllers/Share/index');
 
         $role->id = 3; // Guest
         $this->Acl->deny($role->id,'controllers');
         $this->Acl->deny($role->id,'controllers/Users');
-        $this->Acl->allow($role->id,'controllers/Users/index');
+        $this->Acl->allow($role->id,'controllers/Guest/index');
+        $this->Acl->allow($role->id,'controllers/Guest/invia');
     
     }
 

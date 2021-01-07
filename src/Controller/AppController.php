@@ -78,7 +78,7 @@ class AppController extends Controller
             ],
             'unauthorizedRedirect' => [
                 'controller' => 'Users',
-                'action' => 'index',
+                'action' => 'logout',
                 'prefix' => false
             ],
             'authError' => 'You are not authorized to access that location.',

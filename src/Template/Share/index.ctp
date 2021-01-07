@@ -1,12 +1,10 @@
 <!--
-    View dashboard Guest
+    View dashboard ShareHolder
 -->
 
 
-<h1> Ciao Utente! </h1>
-
+<h1> Ciao Socio! </h1>
 <p><?= $this->Html->link('Log Out', ['controller' => 'Users','action' => 'logout']) ?></p>
-<h6> Ecco i tuoi dati: </h6><br>
 <?=
 //$this->Auth->_getUser();
 
@@ -31,9 +29,36 @@ echo "Cognome = ".$surname."<br>";
 echo "Email = ".$email."<br>";
 echo "Data di nascita = ".$birth."<br>";
 
-
-
 ?>
 
-<br><br><h4> Invia la richiesta per diventare socio </h4>
-<p><?= $this->Html->link('Invia', ['controller' => 'Guest','action' => 'invia']) ?></p>
+
+<h1>Courses</h1>
+<div class="courses"><table>
+
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        
+        
+    </tr>
+
+   
+
+    <?php foreach ($courses as $course): ?>
+    <tr>
+        <td>
+            <?= $this->Html->link($course->name, ['controller' => 'Courses', 'action' => 'view', $course->description]) ?>
+        </td>
+       
+        <td>
+            <?= $course->description?>
+            
+        </td>
+
+        
+        
+    </tr>
+    
+    <?php endforeach; ?>
+    </table>
+    </div>
