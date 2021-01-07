@@ -8,6 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
@@ -23,7 +25,9 @@
                 <th scope="col"><?= $this->Paginator->sort('accountYear') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('username') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('role') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('role_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -38,7 +42,9 @@
                 <td><?= $this->Number->format($user->accountYear) ?></td>
                 <td><?= h($user->username) ?></td>
                 <td><?= h($user->password) ?></td>
-                <td><?= h($user->role) ?></td>
+                <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+                <td><?= h($user->created) ?></td>
+                <td><?= h($user->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

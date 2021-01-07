@@ -37,11 +37,12 @@ class AppController extends Controller
      *
      * @return void
      */
+
+
     public function initialize()
     {
         parent::initialize();
-
-        
+        $this->loadComponent('Acl',['className'=>'Acl.Acl']);
         
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,
@@ -56,20 +57,42 @@ class AppController extends Controller
                         'password' => 'password'
                     ]
                 ]
-            ],/*
+            ],
+            'authorize' => [
+                'Acl.Actions' => ['actionPath' => 'controllers/']
+            ],
             'loginAction' => [
+                'plugin' => false,
                 'controller' => 'Users',
                 'action' => 'login'
-            ],*/
-             // If unauthorized, return them to page they were just on
-            'unauthorizedRedirect' => $this->referer()
+            ],
+            'loginRedirect' => [
+                'plugin' => false,
+                'controller' => 'Users',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'plugin' => false,
+                'controller' => 'Users',
+                'action' => 'login'
+            ],
+            'unauthorizedRedirect' => [
+                'controller' => 'Users',
+                'action' => 'index',
+                'prefix' => false
+            ],
+            'authError' => 'You are not authorized to access that location.',
+            'flash' => [
+                'element' => 'error'
+            ]
         ]);
     
     }
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['display', 'view', 'add']);
+        // abilitato per disattivare acl
+        // $this->Auth->allow();
     }    
 
    

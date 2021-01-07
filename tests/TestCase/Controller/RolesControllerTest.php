@@ -21,6 +21,7 @@ class RolesControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Roles',
+        'app.Users',
     ];
 
     /**

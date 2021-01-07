@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
- * @property \App\Model\Table\RolesTable&\Cake\ORM\Association\BelongsTo $Roles
+ * @property &\Cake\ORM\Association\BelongsTo $Roles
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
@@ -19,8 +19,6 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null, $options = [])
- *
- * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class UsersTable extends Table
 {
@@ -37,9 +35,6 @@ class UsersTable extends Table
         $this->setTable('users');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
-
-        $this->addBehavior('Timestamp');
-
         $this->addBehavior('Acl.Acl', ['type' => 'requester']);
 
         $this->belongsTo('Roles', [

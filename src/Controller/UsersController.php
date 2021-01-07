@@ -12,110 +12,31 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['logout','login','install']);
+    }
+
     /**
      * Index method
      *
      * @return \Cake\Http\Response|null
      */
+
+    //var $components = array('Auth', 'Acl');  
+
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Roles'],
+        ];
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
     }
 
-    public function initialize()
-    {
-    parent::initialize();
-    $this->Auth->allow(['logout']);
-
-
     
-    }
-
-
-    /**
-     * View method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $user = $this->Users->get($id, [
-            'contain' => [],
-        ]);
-
-        $this->set('user', $user);
-    }
-
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
-    public function add()
-    {
-        $user = $this->Users->newEntity();
-        if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            $user->role='guest';
-            $user->accountYear=date('Y');
-           
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('Utente Salvato.'));
-
-                return $this->redirect(['action' => 'login']);
-            }
-            $this->Flash->error(__('Impossibile aggiungere utente, riprova.'));
-        }
-        $this->set(compact('user'));
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $user = $this->Users->get($id, [
-            'contain' => [],
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('Utente aggiornato'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('Impossibile modificare utente, riprova.'));
-        }
-        $this->set(compact('user'));
-    }
-
-    /**
-     * Delete method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $user = $this->Users->get($id);
-        if ($this->Users->delete($user)) {
-            $this->Flash->success(__('Utente cancellato.'));
-        } else {
-            $this->Flash->error(__('Utente impossibile da cancellare.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
-    }
 
     public function login()
     {
@@ -146,11 +67,15 @@ class UsersController extends AppController
                 ]);
             }
             
+            print_r($user);
             $this->Flash->error('le credenziali sono incorrette.');
         }
     }
+    
+    
 
-public function logout()
+
+    public function logout()
 {
     //verifichiamo se l'utente è già sloggato
 
@@ -175,32 +100,106 @@ public function logout()
         }
 }
 
-/*public $components = array('Acl');
+    /**
+     * View method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function view($id = null)
+    {
+        $user = $this->Users->get($id, [
+            'contain' => ['Roles'],
+        ]);
 
-public function azione() {
-    $aro = $this->Acl->Aro;
-
-    // Here's all of our group info in an array we can iterate through
-    $groups = array(
-        0 => array(
-            'alias' => 'admins'
-        ),
-        1 => array(
-            'alias' => 'guests'
-        ),
-        2 => array(
-            'alias' => 'shareholders'
-        ),
-    );
-
-    // Iterate and create ARO groups
-    foreach ($groups as $data) {
-        // Remember to call create() when saving in loops...
-        $aro->create();
-
-        // Save data
-        $aro->save($data);
+        $this->set('user', $user);
     }
 
-}*/
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function add()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user->accountYear=date('Y');
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'roles'));
+    }
+
+    /**
+     * Edit method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function edit($id = null)
+    {
+        $user = $this->Users->get($id, [
+            'contain' => [],
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'roles'));
+    }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $user = $this->Users->get($id);
+        if ($this->Users->delete($user)) {
+            $this->Flash->success(__('The user has been deleted.'));
+        } else {
+            $this->Flash->error(__('The user could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
+    function install(){     
+      
+        $role=$this->Users->Roles;
+
+        $role->id = 1; // Admin
+        $this->Acl->allow($role->id,'controllers'); 
+        
+        $role->id = 2; // Socio 
+        $this->Acl->deny($role->id,'controllers');
+        $this->Acl->deny($role->id,'controllers/Users');
+        $this->Acl->allow($role->id,'controllers/Users/index');
+
+        $role->id = 3; // Guest
+        $this->Acl->deny($role->id,'controllers');
+        $this->Acl->deny($role->id,'controllers/Users');
+        $this->Acl->allow($role->id,'controllers/Users/index');
+    
+    }
+
 }

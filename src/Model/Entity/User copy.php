@@ -16,10 +16,8 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $username
  * @property string $password
  * @property int $role_id
- * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\Role $role
+ * @property \Acl\Model\Entity\Aco[] $aco
  */
 class User extends Entity
 {
@@ -41,9 +39,7 @@ class User extends Entity
         'username' => true,
         'password' => true,
         'role_id' => true,
-        'created' => true,
-        'modified' => true,
-        'role' => true,
+        'aco' => true,
     ];
 
     /**
@@ -55,6 +51,7 @@ class User extends Entity
         'password',
     ];
 
+    
     protected function _setPassword($value)
     {
         if (strlen($value)) {
@@ -64,22 +61,22 @@ class User extends Entity
         }
     }
 
+    
     public function parentNode()
     {
-        if (!$this->id) {
-            return null;
-        }
-        if (isset($this->role_id)) {
-            $roleId = $this->role_id;
-        } else {
-            $Users = TableRegistry::get('Users');
-            $user = $Users->find('all', ['fields' => ['role_id']])->where(['id' => $this->id])->first();
-            $roleId = $user->role_id;
-        }
-        if (!$roleId) {
-            return null;
-        }
-        return ['Roles' => ['id' => $roleId]];
+	    if (!$this->id) {
+		    return null;
+	    }
+	    if (isset($this->role_id)) {
+		    $roleid = $this->role_id;
+	    } else {
+		    $Users = TableRegistry::get('Users');
+		    $user = $Users->find('all', ['fields' => ['role_id']])->where(['id' => $this->id])->first();
+		    $roleid = $user->role_id;
+	    }
+	    if (!$roleid) {
+		    return null;
+	    }
+	    return ['Roles' => ['id' => $roleid]];
     }
-
 }

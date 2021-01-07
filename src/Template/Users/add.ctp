@@ -8,6 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">
@@ -19,10 +21,10 @@
             echo $this->Form->control('surname');
             echo $this->Form->control('email');
             echo $this->Form->control('birthDate');
-            //echo $this->Form->control('accountYear');
+            echo $this->Form->control('accountYear');
             echo $this->Form->control('username');
             echo $this->Form->control('password');
-            //echo $this->Form->control('role');
+            echo $this->Form->control('role_id', ['options' => $roles]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
