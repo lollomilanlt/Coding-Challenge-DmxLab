@@ -8,7 +8,7 @@
     <tr>
         <th>Title</th>
         <th>Description</th>
-        <th><p><?= $this->Html->link('Aggiungi Corso', ['action' => 'add']) ?></p></th>
+        <th><p><?= $this->Html->link('Aggiungi Corso', ['controller' => 'Courses','action' => 'add']) ?></p></th>
         <th><p><?= $this->Html->link('Log Out', ['controller' => 'Users','action' => 'logout']) ?></p></th>
         
     </tr>

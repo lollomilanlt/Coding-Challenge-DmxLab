@@ -37,3 +37,5 @@ echo "Data di nascita = ".$birth."<br>";
 
 <br><br><h4> Invia la richiesta per diventare socio </h4>
 <p><?= $this->Html->link('Invia', ['controller' => 'Guest','action' => 'invia']) ?></p>
+
+

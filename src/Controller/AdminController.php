@@ -25,6 +25,7 @@ class AdminController extends AppController
 
     public function add()
     {
+        $this->loadModel('Courses');
         $course = $this->Courses->newEntity();
 
         if ($this->request->is('post')) {
