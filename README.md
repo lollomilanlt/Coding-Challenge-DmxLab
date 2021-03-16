@@ -92,10 +92,3 @@ Lascio il repo aperto con la speranza che tutto questo possa essere utile ad un 
 5. Non e' possibile accedere alle pagine se non si e' loggati ma le pagine dell'admin modificando l'url purtroppo sono accessibili
 
 
-## Questioni da porre a Dario (riportate così come le ho scritte sulle note del telefono)
-
-1. Chiedere bene il model del mvc (table e articles) per fare definitivamente chiarezza
-2. Se è possibile utilizzare il pattern dao
-3. Non mi è sembrato di lavorare con oggetti
-4. Definizione insert di massa
-5. Spiegazione AppController
